@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "devDependencies": {
+    "jspm": "0.16.46"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "wwwroot",
+      "packages": "wwwroot/_libs"
+    },
+    "dependencies": {
+      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0",
+      "aurelia-framework": "npm:aurelia-framework@^1.0.6",
+      "bootstrap": "github:twbs/bootstrap@^3.3.7",
+      "font-awesome": "npm:font-awesome@^4.6.3",
+      "moment": "npm:moment@^2.15.1"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}
