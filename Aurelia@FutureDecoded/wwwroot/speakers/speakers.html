@@ -1,0 +1,9 @@
+﻿<template>
+    <section class="au-animate">
+        <div class="row au-stagger" style="margin-top: 25px; margin-bottom: 25px;">
+            <div class="col-sm-6 col-md-3 card-container au-animate" repeat.for="speaker of speakers">
+                <compose model.bind="speaker" view-model="speakers/speaker"></compose>
+            </div>
+        </div>
+    </section>
+</template>
