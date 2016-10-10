@@ -1,6 +1,11 @@
 ﻿<template>
+    <require from="/_components/DateFormat"></require>
+
     <section class="au-animate">
         <div class="au-stagger" style="margin-top: 25px;">
+            <div class="composition">
+                ${now | dateFormat : 'ss.SSS' & throttle : 2000 }
+            </div>
             <div repeat.for="tweet of tweets">
                 <compose model.bind="tweet" view="tweets-tweet.html"></compose>
             </div>

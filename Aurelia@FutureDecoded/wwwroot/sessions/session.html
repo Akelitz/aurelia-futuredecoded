@@ -1,9 +1,11 @@
 ﻿<template>
+    <require from="/_components/DateFormat"></require>
+
     <div class="row">
         <div class="col-md-12">
             <h1>${session.title}</h1>
             <h2>${session.speaker.firstName} ${session.speaker.lastName}</h2>
-            <h3>${session.dateTime}</h3>
+            <h3>${session.dateTime | dateFormat : 'D/M H:mm' }</h3>
         </div>
     </div>
 </template>
