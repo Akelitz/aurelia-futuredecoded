@@ -1,4 +1,5 @@
-﻿import {speakersData} from '/_services/speakersData';
+﻿import {sessionsData} from '/_services/sessionsData';
+import {speakersData} from '/_services/speakersData';
 import moment from 'moment';
 
 export class Repository {
@@ -9,6 +10,32 @@ export class Repository {
                 this.speakers = speakersData;
             }
             resolve(this.speakers);
+        });
+        return promise;
+    }
+
+    getAllSessions() {
+        var promise = new Promise((resolve, reject) => {
+            if (!this.sessions) {
+                sessionsData.sort((a, b) => a.dateTime >= b.dateTime ? 1 : -1 );
+                sessionsData.forEach(s => {
+                    var dt = moment(s.dateTime)
+                        .format('DD/MM/YYYY HH:mm');
+                    s.startsAt = dt;
+                });
+                this.sessions = sessionsData;
+            }
+            resolve(this.sessions);
+        });
+        return promise;
+    }
+
+    getSession(id) {
+        var promise = new Promise((resolve, reject) => {
+            this.getAllSessions()
+                .then(sessions => {
+                    resolve(sessions.find(s => s.id === id));
+                });
         });
         return promise;
     }
