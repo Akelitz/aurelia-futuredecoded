@@ -39,4 +39,31 @@ export class Repository {
         });
         return promise;
     }
+
+    getSessions(upcomingOrPast) {
+        if (upcomingOrPast == 'past')
+            return this.getPastSessions();
+        else
+            return this.getUpcomingSessions();
+    }
+
+    getUpcomingSessions() {
+        var promise = new Promise((resolve, reject) => {
+            this.getAllSessions()
+                .then(sessions => {
+                    resolve(sessions.filter(s => moment(s.dateTime) > moment()));
+                });
+        });
+        return promise;
+    }
+
+    getPastSessions() {
+        var promise = new Promise((resolve, reject) => {
+            this.getAllSessions()
+                .then(sessions => {
+                    resolve(sessions.filter(s => moment(s.dateTime) < moment()));
+                });
+        });
+        return promise;
+    }
 }

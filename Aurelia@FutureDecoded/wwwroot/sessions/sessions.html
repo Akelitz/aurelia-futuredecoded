@@ -1,17 +1,8 @@
 ﻿<template>
-    <section class="au-animate">
-        <div class="row au-stagger" style="margin-top: 25px;">
-            <div class="col-md-12 card-container au-animate" repeat.for="session of sessions">
-                <a href.bind="session.url">
-                    <div class="card">
-                        <div class="content">
-                            <p class="title">${session.title}</p>
-                            <p class="name">${session.speaker.firstName} ${session.speaker.lastName}</p>
-                            <p class="name">${session.startsAt} - ${session.track.name}</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
+    <ul class="nav nav-tabs" style="margin-top: 25px;">
+        <li repeat.for="route of router.navigation" class="${route.isActive ? 'active' : ''}">
+            <a href.bind="route.href">${route.title}</a>
+        </li>
+    </ul>
+    <router-view></router-view>
 </template>
