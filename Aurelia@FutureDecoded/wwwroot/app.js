@@ -1,5 +1,5 @@
 ﻿export class App {
-    message = 'Benvenuti a Future Decoded!';
+    message = 'App';
 
     constructor() {
         this.name = '';

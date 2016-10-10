@@ -1,18 +1,9 @@
 ﻿<template>
     <div class="splash">
         <div class="message" title="Salve, ${tooltip}">
+            <p>${footer}</p>
             <p>${message}</p>
+            <p>${$parent.message}</p>
         </div>
-    </div>
-    <div class="binding">
-        <div>In agenda abbiamo:</div>
-        <ul>
-            <li repeat.for="topic of agenda">${topic}</li>
-            <li>...e molto altro</li>
-        </ul>
-        Chi sei? <input type="text" value.bind="name" />
-        <span if.bind="name != ''">
-            <button click.delegate="sayHello()">Ciao!</button>
-        </span>
     </div>
 </template>

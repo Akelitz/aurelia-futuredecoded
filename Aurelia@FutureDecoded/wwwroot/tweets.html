@@ -1,0 +1,9 @@
+﻿<template>
+    <section class="au-animate">
+        <div class="au-stagger" style="margin-top: 25px;">
+            <div repeat.for="tweet of tweets">
+                <compose model.bind="tweet" view="tweets-tweet.html"></compose>
+            </div>
+        </div>
+    </section>
+</template>

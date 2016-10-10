@@ -192,3 +192,20 @@ div.au-stagger {
 .binding button {
     font-size: 60px;
 }
+
+.composition {
+    font-size: 48px;
+    margin: 10px;
+}
+
+.main {
+    border: 10px dashed greenyellow;
+}
+
+.side {
+    border: 10px dashed orange;
+}
+
+.navbar .footer {
+    border: 10px dashed deepskyblue;
+}
